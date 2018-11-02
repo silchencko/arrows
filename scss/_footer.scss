@@ -1,0 +1,91 @@
+.footer {
+  height: $headFootHeight;
+  min-height: $minFootHeight;
+  background: $defaultBackground url("../images/contact.jpg") no-repeat center;
+  background-size: cover;
+  -webkit-clip-path: $footerArrowPolygon;
+  clip-path: $footerArrowPolygon;
+  position: relative;
+  color: $whiteTextColor;
+  padding-top: 225px;
+}
+
+.footer-underground {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background: #000;
+  opacity: 0.8;
+  -webkit-clip-path: $footerArrowPolygon;
+  clip-path: $footerArrowPolygon;
+  z-index: -1;
+}
+
+.footer-title {
+  text-align: center;
+  text-transform: uppercase;
+  font-family: $headingTitleFont;
+  font-size: 25px;
+  font-weight: 700;
+  margin-bottom: 50px;
+}
+
+.footer-title__underline {
+    margin: 10px auto;
+    width: 30px;
+    height: 5px;
+    background: $whiteTextColor;
+}
+
+.footer__description {
+  @include make-row();  
+}
+
+.footer__text {
+  @include make-lg-column(4);
+  @include make-lg-column-offset(4);
+  font: 13px $headingTitleFont;
+  text-align: center;
+  margin-bottom: 65px;
+}
+
+.contacts {
+  @include make-row();
+  margin-bottom: 90px;
+}
+
+.contacts__item {
+  @include make-lg-column(3);
+  text-align: center;
+}
+
+.contacts__link {
+  color: $whiteTextColor;
+}
+
+.contacts__link:hover {
+    color: $blueTextColor;
+    text-decoration: none;
+  }
+
+.contacts__icon {
+  font-size: 60px;
+  color: $whiteTextColor;
+}
+
+.contacts__title {
+  font: 18px $headingTitleFont;
+  font-weight: bold;
+  margin: 18px 0 15px;
+}
+
+.contacts__subtitle,
+.rights {
+  font: 15px $headingTitleFont;
+}
+
+.rights {
+  text-align: center;
+}

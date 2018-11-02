@@ -1,0 +1,121 @@
+.header {
+  height: $headFootHeight;
+  min-height: $minHeadHeight;
+  background: $defaultBackground url("../images/header.jpg") no-repeat center;
+  background-size: cover;
+  -webkit-clip-path: $headerArrowPolygon;
+  clip-path: $headerArrowPolygon;
+  background-attachment: fixed;
+  box-shadow:  0 0 10px rgba(0,0,0,0.5);
+  position: relative;
+}
+
+.header-underground {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: $headFootHeight;
+  min-height: $minHeadHeight;
+  background: #2b4866;
+  opacity: 0.6;
+  -webkit-clip-path: $headerArrowPolygon;
+  clip-path: $headerArrowPolygon;
+  z-index: -1;
+}
+
+.navigation {
+  @include make-row ();
+  margin-top: 35px;
+}
+
+.logo {
+  font: bold 48px $logoFont;
+  line-height: 0.6em;
+}
+
+.logo__icon {
+  font-size: 34px;
+}
+
+.logo--small {
+  @include make-lg-column (2);
+  color: $whiteTextColor;
+}
+
+.nav {
+  @include make-lg-column (10);
+  text-align: right;
+  padding: 10px 0;
+}
+
+.nav__item {
+  display: inline-block;
+  margin-left: 20px;
+  
+}
+
+.nav__link {
+  font-family: "Raleway";
+  font-weight: 700;
+  font-size: 18px;
+  color: $whiteTextColor;
+}
+
+.logo--big {
+  width: 105px;
+  height: 120px;
+  background: #fff;
+  -webkit-clip-path: $logoBigPolygon;
+  clip-path: $logoBigPolygon;
+  margin: 0 auto;
+  margin-top: 20vh;
+  margin-bottom: 30px;
+  padding: 23px 7px;
+}
+
+.logo__name {
+  text-align: center;
+  font-size: 25px;
+}
+
+.logo-container {
+  @include make-row();
+  text-align: center;
+}
+
+.heading-title {
+  @include make-lg-column(8);
+  @include make-lg-column-offset(2);
+  font: 500 18px "Raleway";
+  color: $whiteTextColor;
+  text-align: center;
+  padding: 10px 40px;
+  margin-bottom: 2vw;
+  text-shadow: 0 0 5px rgba(0,0,0,0.1); 
+}
+
+.know-more-btn {
+  @include make-lg-column(2);
+  @include make-lg-column-offset(5);
+  display: inline-block;
+  text-align: center;
+  width: 157px;
+  padding: 10px;
+  border: 2px solid $whiteTextColor;
+  color: $whiteTextColor;
+  font: bold 15px "Raleway";
+}
+
+.mouse-scrolling {
+  width: 100%;
+  text-align: center;
+  text-transform: uppercase;
+  color: $whiteTextColor;
+  position: absolute;
+  bottom: 1vw;
+}
+
+.mouse-scrolling__text {
+  margin: 5px;
+}

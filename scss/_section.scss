@@ -1,0 +1,382 @@
+.section:nth-child(odd){
+  padding-top: 55px;
+  padding-bottom: 20px;
+}
+
+.section:nth-child(even){
+  padding-top: 203px;
+  padding-bottom: 215px;
+}
+
+.section-title {
+  text-align: center;
+  text-transform: uppercase;
+  font-family: $headingTitleFont;
+  font-size: 25px;
+  font-weight: 700;
+  margin-bottom: 50px;
+}
+
+.section:nth-child(odd) .section-title {
+  color: $blueTextColor;
+}
+
+.section:nth-child(even) .section-title {
+  color: $whiteTextColor;
+}
+
+section:nth-child(odd) .section__text {
+  color: $grayTextColor;
+}
+
+section:nth-child(even) .section__text {
+  color: $whiteTextColor;
+}
+
+.section-title__underline {
+  margin: 10px auto;
+  width: 30px;
+  height: 5px;
+}
+
+.section:nth-child(odd) .section-title__underline {
+  background: $blueTextColor;
+}
+
+.section:nth-child(even) .section-title__underline {
+  background: $whiteTextColor;
+}
+
+.section-underground {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background: #000;
+  opacity: 0.6;
+  -webkit-clip-path: $arrowPolygon;
+  clip-path: $arrowPolygon;
+  z-index: -1;
+}
+
+/* Services */
+
+.services {
+  @include make-row();
+}
+
+.service {
+  @include make-lg-column(2);
+  @include make-lg-column-offset(2);
+  text-align: center;
+  color: $grayTextColor;
+}
+
+.service:nth-child(1) {
+  @include make-lg-column-offset(1);
+}
+
+.service__icon {
+  font-size: 64px;
+}
+
+.service__title {
+  font: 700 20px "Raleway";
+  margin: 15px auto 20px;
+}
+
+.service__description {
+  font: 500 13px "Raleway";
+}
+
+.section:nth-child(even) {
+  padding-bottom: 150px;
+}
+
+/* Portfolio */
+
+.section-portfolio {
+  background: $defaultBackground url("../images/table.jpg") no-repeat center;
+  background-size: cover;
+  -webkit-clip-path: $arrowPolygon;
+  clip-path: $arrowPolygon;
+  position: relative;
+}
+
+.portfolio {
+  @include make-row;
+  position: relative;
+}
+
+.portfolio-underground {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  background: rgb(67, 67, 107);
+  opacity: 0.6;
+  box-sizing: border-box;
+}
+
+.project {
+  @include make-lg-column(4);
+  padding-left: 0;
+  padding-right: 0;
+  height: 200px;
+  position: relative;
+
+  &:nth-child(3n+1) {
+    padding-left: 15px;
+  }
+
+  &:nth-child(3n+3) {
+    padding-right: 15px;
+  }
+}
+
+.project_img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.project__layout {
+  @include project__layout;
+  background: rgba(41,128,185,0.4);
+  text-align: center;
+
+  &:hover {
+    background: rgba(41,128,185,0.8);
+  }
+
+  &:hover .project__title,
+  &:hover .project__btn {
+    display: block;
+  }
+}
+
+.project__title {
+  font-family: $headingTitleFont;
+  font-size: 25px;
+  font-weight: bold;
+  color: $whiteTextColor;
+  margin: 45px auto 35px;
+  display: none;
+}
+
+.project__btn {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background: $whiteTextColor;
+  margin: 5px auto;
+  padding: 27px 5px;
+  color: $blueTextColor;
+  font-size: 65px;
+  text-decoration: none;
+  display: none;
+
+  &:hover {
+    color: darken($blueTextColor, 20%);
+    text-decoration: none;
+  }
+
+  &:active {
+    color: lighten($blueTextColor, 20%);
+  }
+
+  &:visited {
+    text-decoration: none;
+  }
+}
+
+/* Team */
+
+.section__description {
+  @include make-row();
+  color: $grayTextColor;
+}
+
+.section__text {
+  @include make-lg-column(4);
+  @include make-lg-column-offset(4);
+  font: 13px $headingTitleFont;
+  text-align: center;
+  margin-bottom: 65px;
+}
+
+.team {
+  @include make-row();
+}
+
+.team-member {
+  @include make-lg-column(3);
+  text-align: center;
+}
+
+.team-member__picture {
+  position: relative;
+
+  &:hover .team-member__layout {
+    display: block;
+  }
+}
+
+.team-member__layout {
+  background: rgba(41,128,185,0.6);
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
+  position: absolute;
+  display: none;
+  z-index: 10;
+}
+
+.team-member__icons {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.team-member__icon-link {
+  display: inline-block;
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  margin: 6px;
+  padding: 7px;
+  background: $whiteTextColor;
+}
+
+.team-member__icon {
+  font-size: 36px;
+  color: $blueTextColor;
+
+  &:hover {
+    color: darken($blueTextColor, 20%);
+  }
+
+  &:active {
+    color: lighten($blueTextColor, 20%);
+  }
+}
+
+.team-member__photo {
+  border-radius: 5px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.team-member__name {
+  font-family: $headingTitleFont;
+  font-size: 20px;
+  font-weight: bold;
+  color: $blueTextColor;
+  margin: 20px auto 10px;
+}
+
+.team-member__position {
+  font-family: $headingTitleFont;
+  font-size: 15px;
+  color: $grayTextColor;
+  margin-bottom: 20px;
+}
+
+/* Offices */
+
+.section-offices {
+  background: $defaultBackground url("../images/offices.jpg") no-repeat center;
+  background-size: cover;
+  -webkit-clip-path: $arrowPolygon;
+  clip-path: $arrowPolygon;
+  position: relative;
+  text-align: center;
+}
+
+.map {
+  max-width: 100%;
+  max-height: 360px;
+}
+
+/* Clients */
+
+.clients {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid $blueTextColor;
+}
+.client {
+  position: relative;
+}
+.client__radio {
+  display: none;
+}
+.client__logo {
+  max-width: 100%;
+  cursor: pointer;
+  margin-bottom: 15px;
+}
+.client__arrow {
+  border-top: 13px solid $blueTextColor;
+  border-left: 13px solid transparent;
+  border-right: 13px solid transparent;
+  position: absolute;
+  left: 40%;
+  bottom: -13px;
+  display: none;
+}
+.client__radio:checked + .client__arrow {
+  display: block;
+}
+
+.testimonials {
+  @include make-row();
+  margin-top: 60px;
+}
+
+.arrow {
+  color: $blueTextColor;
+  @include make-lg-column(1);
+  padding: 5px;
+  margin-top: 50px;
+  font-size: 40px;
+  cursor: pointer;
+}
+
+.arrow-left {
+  @include make-lg-column-offset(1);
+  text-align: right;
+}
+
+.arrow-right {
+  text-align: left;
+}
+
+.testimonials-list {
+  @include make-lg-column(8);
+  font: 18px $headingTitleFont;
+  color: $grayTextColor;
+  text-align: center;
+  margin: 45px 5px 30px;
+}
+
+
+
+.testimonial__author {
+    font-weight: bold;
+    margin: 25px;
+}
+
+.testimonial__name {
+    color: $blueTextColor;
+}
+
+.hidden {
+    display: none;
+}
+
+.show {
+    display: block;
+}
